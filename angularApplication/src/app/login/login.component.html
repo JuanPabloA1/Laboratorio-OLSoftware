@@ -1,0 +1,20 @@
+<div class="fondo-pantalla">
+  <form class="fondo" [formGroup]="form">
+    <h2 class="title-session">Inicio de sesión</h2>
+    <div class="example-button-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Login</mat-label>
+        <input matInput type="text" formControlName="username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+    </div>
+
+    <button type="button" class="button-login" mat-raised-button routerLink="area" color="primary" (click)="onLogin($event)">
+      Ingresar
+    </button>
+  </form>
+</div>

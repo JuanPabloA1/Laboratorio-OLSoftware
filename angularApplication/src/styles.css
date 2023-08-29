@@ -1,0 +1,192 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import '~ngx-toastr/toastr';
+
+html, body { height: 100%; }
+body { margin: 0; overflow-x: hidden; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  background: url('./assets/img/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+form {
+  text-align: center;
+  /* padding: 6rem; */
+}
+
+.title-session {
+  margin: 0;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.button-login {
+  position: absolute;
+  top: 1.5rem;
+
+}
+
+.fondo-pantalla {
+  width: 100%;
+  height: 100%;
+}
+
+.position-title-create {
+  display: grid;
+}
+
+.button-create {
+  justify-self: end;
+  align-self: center;
+  padding-right: 6rem !important;
+  grid-row: 1;
+}
+
+.title{
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+}
+
+
+h1 {
+  padding: 2rem;
+  color: white;
+  font-weight: bolder;
+  mix-blend-mode: screen;
+}
+
+section {
+  display: inline;
+}
+
+.spacing-buttons {
+  margin: 1rem !important;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.mat-dialog-container {
+  position: relative;
+}
+
+table {
+  width: 100%;
+}
+
+.scroll-x {
+  overflow-x: scroll;
+}
+
+app-gestion-usuario,
+app-gestion-fabricante,
+app-gestion-dispositivo,
+app-gestion-modelo,
+app-gestion-rol  {
+  display: grid;
+  justify-content: center;
+}
+
+.container-areas {
+  display: grid;
+  justify-content: center;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  max-width: fit-content;
+  display: block;
+}
+
+.table-small-scroll {
+  overflow-x: auto;
+  max-width: 90%;
+  display: block;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(200px, 1fr));
+  gap: 0.1rem;
+}
+
+th {
+  text-align: center !important;
+  padding: 1rem 2rem 1rem 2rem !important;
+}
+
+th:last-child {
+  text-align: end !important;
+  padding-right: 4.9rem !important;
+}
+
+mat-icon {
+  padding: 0 !important;
+  transition: 300ms all ease-in-out !important;
+}
+
+mat-icon:hover {
+  cursor: pointer;
+  transform: scale(1.5 , 1.5);
+}
+
+td {
+  padding: 1rem 2rem 1rem 2rem !important;
+}
+
+td:last-child {
+  width: auto;
+  display: flex;
+  justify-content: end;
+}
+
+.salida {
+  position: absolute;
+  right: 2%;
+  top: 1.5%
+}
+
+.color-icon {
+  color: white;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+#color {
+  color: green;
+}
+
+.fondo {
+  max-width: 13rem;
+  max-height: 12rem;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+
+.example-button-row {
+  display: table-caption;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

@@ -1,0 +1,153 @@
+DROP TABLE MODELOS CASCADE;
+DROP TABLE DISPOSITIVOS CASCADE;
+DROP TABLE USUARIOS CASCADE;
+DROP TABLE AREAS;
+DROP TABLE ROLES;
+DROP TABLE FABRICANTES;
+
+CREATE TABLE FABRICANTES(
+	id_fabricante SERIAL PRIMARY KEY,
+	nombre VARCHAR(50),
+	borrado BOOLEAN DEFAULT false
+);
+
+CREATE TABLE ROLES(
+	id_rol SERIAL PRIMARY KEY,
+	nombre VARCHAR(50),
+	borrado BOOLEAN DEFAULT false
+);
+
+
+CREATE TABLE AREAS(
+	id_area SERIAL PRIMARY KEY,
+	nombre VARCHAR(50),
+	borrado BOOLEAN DEFAULT false
+);
+
+CREATE TABLE MODELOS(
+	id_modelo SERIAL PRIMARY KEY,
+	nombre VARCHAR(50),
+	fabricante SERIAL,
+	borrado BOOLEAN DEFAULT false,
+	CONSTRAINT "fk_modelo_fabricante"
+		FOREIGN KEY ("fabricante")
+		REFERENCES FABRICANTES ("id_fabricante")
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+);
+
+CREATE TABLE USUARIOS(
+	id_usuario SERIAL PRIMARY KEY,
+	tipo_identificacion VARCHAR(50),
+	numero_identificacion BIGINT,
+	primer_nombre VARCHAR(50),
+	segundo_nombre VARCHAR(50),
+	primer_apellido VARCHAR(50),
+	segundo_apellido VARCHAR(50),
+	correo_electronico VARCHAR(50) UNIQUE,
+	usuario VARCHAR(50) UNIQUE,
+	contrasena VARCHAR(50),
+	telefono BIGINT,
+	rol SERIAL,
+	area SERIAL,
+	borrado BOOLEAN DEFAULT false,
+	CONSTRAINT "fk_usuario_rol"
+		FOREIGN KEY ("rol")
+		REFERENCES ROLES ("id_rol")
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT "fk_usuario_area"
+		FOREIGN KEY ("area")
+		REFERENCES AREAS ("id_area")
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+);
+
+CREATE TABLE DISPOSITIVOS(
+	id_dispositivo SERIAL PRIMARY KEY,
+	nombre VARCHAR(50),
+	area SERIAL,
+	estado_dispositivo VARCHAR(50),
+	tipo_dispositivo VARCHAR(50),
+	fabricante SERIAL,
+	modelo SERIAL,
+	numero_serie VARCHAR(50),
+	numero_inventario SERIAL,
+	comentario VARCHAR(200),
+	borrado BOOLEAN DEFAULT false,
+	CONSTRAINT "fk_dispositivo_area"
+		FOREIGN KEY ("area")
+		REFERENCES AREAS ("id_area")
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT "fk_dispositivo_fabricante"
+		FOREIGN KEY ("fabricante")
+		REFERENCES FABRICANTES ("id_fabricante")
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT "fk_dispositivo_modelo"
+		FOREIGN KEY ("modelo")
+		REFERENCES MODELOS ("id_modelo")
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+);
+
+ALTER SEQUENCE areas_id_area_seq RESTART WITH 1;
+ALTER SEQUENCE dispositivos_area_seq RESTART WITH 1;
+ALTER SEQUENCE dispositivos_fabricante_seq RESTART WITH 1;
+ALTER SEQUENCE dispositivos_id_dispositivo_seq RESTART WITH 1;
+ALTER SEQUENCE dispositivos_modelo_seq RESTART WITH 1;
+ALTER SEQUENCE dispositivos_numero_inventario_seq RESTART WITH 1;
+ALTER SEQUENCE fabricantes_id_fabricante_seq RESTART WITH 1;
+ALTER SEQUENCE modelos_fabricante_seq RESTART WITH 1;
+ALTER SEQUENCE modelos_id_modelo_seq RESTART WITH 1;
+ALTER SEQUENCE roles_id_rol_seq RESTART WITH 1;
+ALTER SEQUENCE usuarios_area_seq RESTART WITH 1;
+ALTER SEQUENCE usuarios_id_usuario_seq RESTART WITH 1;
+ALTER SEQUENCE usuarios_rol_seq RESTART WITH 1;
+
+--Datos semilla
+INSERT INTO AREAS(nombre) VALUES ('Infraestructura');
+INSERT INTO AREAS(nombre) VALUES ('Contabilidad');
+INSERT INTO AREAS(nombre) VALUES ('Soporte');
+INSERT INTO AREAS(nombre) VALUES ('Fabrica');
+
+INSERT INTO ROLES (nombre) VALUES ('Administrador');
+INSERT INTO ROLES (nombre) VALUES ('SuperVision');
+
+INSERT INTO FABRICANTES (nombre) VALUES ('Lenovo');
+INSERT INTO FABRICANTES (nombre) VALUES ('Dell');
+INSERT INTO FABRICANTES (nombre) VALUES ('Cisco');
+INSERT INTO FABRICANTES (nombre) VALUES ('Logitech');
+
+INSERT INTO MODELOS (nombre, fabricante) VALUES ('G203', 1);
+INSERT INTO MODELOS (nombre, fabricante) VALUES ('RV130W', 2);
+INSERT INTO MODELOS (nombre, fabricante) VALUES ('SK-8115', 3);
+INSERT INTO MODELOS (nombre, fabricante) VALUES ('ThinkPad X1', 4);
+
+INSERT INTO USUARIOS (
+	tipo_identificacion, numero_identificacion, primer_nombre, segundo_nombre, primer_apellido, 
+	segundo_apellido, correo_electronico, usuario, contrasena, telefono, rol, area
+) VALUES ('Cédula de ciudadania', 1006425730, 'Juan', 'Pablo', 'Mera', 
+		  'Agudelo', 'juan.mera@olsoftware.com', 'juan.mera', '1234', 3147771848, 1, 4);
+		  
+INSERT INTO USUARIOS (
+	tipo_identificacion, numero_identificacion, primer_nombre, segundo_nombre, primer_apellido, 
+	segundo_apellido, correo_electronico, usuario, contrasena, telefono, rol, area
+) VALUES ('Cédula de ciudadania', 123456789, 'Carlos', 'Eduardo', 'Virgen', 
+		  'Londoño', 'carlos.virgen@olsoftware.com', 'carlos.virgen', '4321', 3156771848, 2, 1);
+
+INSERT INTO DISPOSITIVOS(
+	nombre, area, estado_dispositivo, tipo_dispositivo, fabricante,
+	modelo, numero_serie, comentario
+) VALUES('Equipo 01', 4, 'En bodega', 'Portatil', 1, 3, 'SN-2997ekJSKAss', 'El dispositivo se encuentra en excelente estado');
+
+INSERT INTO DISPOSITIVOS(
+	nombre, area, estado_dispositivo, tipo_dispositivo, fabricante,
+	modelo, numero_serie, comentario
+) VALUES('Equipo 02', 1, 'En producción', 'Monitor', 2, 1, 'SN-2997ekJSKAww', 'El dispositivo se encuentra en construcción');
+
+INSERT INTO DISPOSITIVOS(
+	nombre, area, estado_dispositivo, tipo_dispositivo, fabricante,
+	modelo, numero_serie, comentario
+) VALUES('Equipo 01', 4, 'En reparación', 'Router', 3, 2, 'SN-2997ekJSiopll', 'El dispositivo se encuentra en reparación algo sucedio');

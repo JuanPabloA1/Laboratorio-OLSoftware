@@ -1,0 +1,10 @@
+form {
+  text-align: center;
+  padding: 3rem;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

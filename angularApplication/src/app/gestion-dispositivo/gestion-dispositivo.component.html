@@ -1,0 +1,60 @@
+<div class="position-title-create">
+  <h1 class="title">Gestión de Dispositivos</h1>
+  <button class="button-create" mat-icon-button *ngIf="validateRole()" color="primary" (click)="onCreate($event)">
+    <mat-icon>note_add</mat-icon>
+  </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-scroll">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Dispositivo</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="area">
+    <th mat-header-cell *matHeaderCellDef>Area</th>
+    <td mat-cell *matCellDef="let element">{{ element.area.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="stateDevice">
+    <th mat-header-cell *matHeaderCellDef>Estado</th>
+    <td mat-cell *matCellDef="let element">{{ element.stateDevice }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="typeDevice">
+    <th mat-header-cell *matHeaderCellDef>Tipo Dispositivo</th>
+    <td mat-cell *matCellDef="let element">{{ element.typeDevice }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="factory">
+    <th mat-header-cell *matHeaderCellDef>Fabricante</th>
+    <td mat-cell *matCellDef="let element">{{ element.factory.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="model">
+    <th mat-header-cell *matHeaderCellDef>Modelo</th>
+    <td mat-cell *matCellDef="let element">{{ element.model.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="numberSerie">
+    <th mat-header-cell *matHeaderCellDef>#Serie</th>
+    <td mat-cell *matCellDef="let element">{{ element.numberSerie }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef >Action</th>
+    <td mat-cell *matCellDef="let data" class="">
+      <div class="example-button-row">
+        <button mat-icon-button *ngIf="validateRole()" (click)="onUpdate($event, data)">
+          <mat-icon id="color">autorenew</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="validateRole()" color="warn" (click)="onDelete($event, data)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </td>
+  </ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

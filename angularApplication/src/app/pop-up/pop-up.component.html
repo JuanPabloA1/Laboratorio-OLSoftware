@@ -1,0 +1,68 @@
+<mat-dialog-content>
+  <form>
+    <section>
+      <div>
+        <h1>{{ titulo }}</h1>
+      </div>
+      <div class="close">
+        <button mat-button mat-dialog-close>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </section>
+
+    <div class="container-grid">
+      <div class="column-grid" *ngFor="let item of campos">
+        <mat-form-field appearance="outline" *ngIf="item.type === 'select'">
+          <mat-label>{{ item.name }}</mat-label>
+          <mat-select
+            [(value)]="propiedades[item.property]!.name"
+            name="item"
+            (selectionChange)="selectionSelects($event.value, item.property)"
+          >
+            <mat-option
+              *ngFor="let info of infoSelect[item.property]"
+              [value]="info.name"
+              name="`${item.name}`"
+            >
+              {{ info.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" *ngIf="item.type != 'select'">
+          <mat-label>{{ item.name }}</mat-label>
+          <input
+            [value]="propiedades[item.property]"
+            (keyup)="setValue($event, item.property)"
+            matInput
+            type="{{ item.type }}"
+            name="`${item.name}`"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="example-button-row">
+      <button
+        *ngIf="mode === 'create'"
+        class="spacing-buttons"
+        mat-raised-button
+        color="primary"
+        (click)="createData($event)"
+        type="button"
+      >
+        Crear
+      </button>
+      <button
+        *ngIf="mode === 'update'"
+        class="spacing-buttons"
+        mat-raised-button
+        color="accent"
+        (click)="updateData($event)"
+        type="button"
+      >
+        Actualizar
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

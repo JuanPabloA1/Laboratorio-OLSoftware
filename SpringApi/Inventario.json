@@ -1,0 +1,704 @@
+{
+	"info": {
+		"_postman_id": "6b19dbd0-e102-48c5-b1aa-261f89b47b33",
+		"name": "Inventario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10950256"
+	},
+	"item": [
+		{
+			"name": "AreaCrud",
+			"item": [
+				{
+					"name": "ObtenerAreas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/area/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"area",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarArea",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/area/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"area",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearArea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"areaId\": 1,\r\n    \"name\": \"Infraestructura\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/area/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"area",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarArea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"areaId\": 1,\r\n    \"name\": \"Infraestructura\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/area/actualizar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"area",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DispositivoCrud",
+			"item": [
+				{
+					"name": "ObtenerDispositivos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/dispositivo/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"dispositivo",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarFabricante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/dispositivo/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"dispositivo",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearDispositivo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/dispositivo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"dispositivo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarDispositivo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/dispositivo/actualizar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"dispositivo",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FabricanteCrud",
+			"item": [
+				{
+					"name": "ObtenerFabricantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/fabricante/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"fabricante",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarFabricante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/fabricante/delete/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"fabricante",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearFabricante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Apple\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/fabricante/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"fabricante",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarFabricante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"factoryId\": 6,\r\n    \"name\": \"Apple M1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/fabricante/actualizar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"fabricante",
+								"actualizar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ModeloCrud",
+			"item": [
+				{
+					"name": "ObtenerModelos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/modelo/all/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"modelo",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarModelo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/modelo/delete/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"modelo",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearModelo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"modelId\": 1,\r\n    \"name\": \"G203\",\r\n    \"factory\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/modelo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"modelo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearModelo Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"modelId\": 1,\r\n    \"name\": \"G203\",\r\n    \"factory\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/modelo/actualizar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"modelo",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RolesCrud",
+			"item": [
+				{
+					"name": "ObtenerRoles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/rol/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"rol",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarRol",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/rol/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"rol",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearArea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Invitado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/rol/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"rol",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarRol",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rolId\": 3,\r\n    \"name\": \"SuperInvitado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/rol/actualizar/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"rol",
+								"actualizar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UsuarioCrud",
+			"item": [
+				{
+					"name": "EliminarUsuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/usuario/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"usuario",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/usuario/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"usuario",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"typeIdentity\": \"Cédula de ciudadania\",\r\n        \"numberIdentity\": 1006425730,\r\n        \"firstName\": \"Juan\",\r\n        \"secondName\": \"Pablo\",\r\n        \"firstLastName\": \"Mera\",\r\n        \"secondLastName\": \"Agudelo\",\r\n        \"email\": \"juan.mera@olsoftware.com\",\r\n        \"user\": \"juan.mera\",\r\n        \"pass\": \"1234\",\r\n        \"phone\": 3147771848,\r\n        \"role\": {\r\n            \"rolId\": 1,\r\n            \"name\": \"Admin\"\r\n        },\r\n        \"area\": {\r\n            \"areaId\": 4,\r\n            \"name\": \"Fabrica\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/usuario/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarUsuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"typeIdentity\": \"Cédula de ciudadania\",\r\n        \"numberIdentity\": 1006425730,\r\n        \"firstName\": \"Juan\",\r\n        \"secondName\": \"Pablo\",\r\n        \"firstLastName\": \"Mera\",\r\n        \"secondLastName\": \"Agudelo\",\r\n        \"email\": \"juan.mera@olsoftware.com\",\r\n        \"user\": \"juan.mera.agudelo\",\r\n        \"pass\": \"12345678\",\r\n        \"phone\": 3147771848,\r\n        \"role\": {\r\n            \"rolId\": 1,\r\n            \"name\": \"Admin\"\r\n        },\r\n        \"area\": {\r\n            \"areaId\": 4,\r\n            \"name\": \"Fabrica\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/inventario/usuario/actualizar/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"inventario",
+								"usuario",
+								"actualizar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
